@@ -1,0 +1,146 @@
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  overflow-x: hidden;
+  background-image: url("backg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content-box {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 3rem auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1.5s ease-in forwards;
+  opacity: 0;
+}
+
+.for-taylor { animation-delay: 0.5s; }
+.for-sam    { animation-delay: 1.5s; }
+.for-david  { animation-delay: 2.5s; }
+.for-me     { animation-delay: 3.5s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+h2 {
+  margin-top: 0;
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  color: #ffccff;
+}
+
+.social-links .social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links .social-icons a {
+  background-color: #222;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.social-links .social-icons a:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .content-box {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .content-box {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-links .social-icons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-links .social-icons a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-box {
+    padding: 1rem;
+  }
+
+  .image {
+    object-position: center;
+  }
+}
